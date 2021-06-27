@@ -1,3 +1,5 @@
+import { Route, Switch } from 'react-router-dom';
+
 import Planets from './pages/Planets';
 import Home from './pages/Home';
 
@@ -12,8 +14,11 @@ function App() {
     <StarWarsContextProvider>
       <GlobalStyle />
       <Header />
-      <Home />
-      {/* <Planets /> */}
+      <Switch>
+        <Route path="/all-filters" component={Planets} />
+        <Route path="/" component={Home} />
+      </Switch>
+
     </StarWarsContextProvider>
   );
 }
