@@ -7,6 +7,8 @@ import {
   StyledInputLabel,
   StyledSelect,
   StyledMenuItem,
+  StyledButton,
+  StyledTextField,
 } from './styles';
 
 function FilterByNum() {
@@ -54,20 +56,30 @@ function FilterByNum() {
           label="Comparison"
         >
           {dropdownComparasion.map((item) => (
-            <StyledMenuItem key={item} value={item}>{item}</StyledMenuItem>
+            <StyledMenuItem key={item} value={item}>
+              {item}
+            </StyledMenuItem>
           ))}
         </StyledSelect>
       </StyledFormControl>
 
-      <input
+      <StyledTextField
         type="number"
-        id="value-filter"
+        id="standard-number"
+        label="Value"
+        InputLabelProps={{
+          shrink: true,
+        }}
         onChange={({ target }) => setValue(Number(target.value))}
       />
 
-      <button id="button-filter" type="button" onClick={() => addNewFilter()}>
+      <StyledButton
+        id="button-filter"
+        type="button"
+        onClick={() => addNewFilter()}
+      >
         Pesquisar
-      </button>
+      </StyledButton>
     </div>
   );
 }
