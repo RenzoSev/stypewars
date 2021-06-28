@@ -30,6 +30,8 @@ export default function useToFilter() {
   const dropdownComparasion = ['maior que', 'menor que', 'igual a'];
 
   return {
+    category,
+    comparison,
     setCategory,
     setComparison,
     setValue,

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MainContainerPlanets = styled.main`
+export const MainContainerPlanets = styled('main')`
   background: #00000038;
   // #ffffff03
   // #00000038
@@ -12,10 +12,9 @@ export const MainContainerPlanets = styled.main`
 
   border: 1px solid #fffafa14;
   border-radius: 4px;
-
 `;
 
-export const ContainerPlanets = styled.div`
+export const ContainerPlanets = styled('div')`
   height: 100%;
 
   overflow-x: scroll;
@@ -24,14 +23,6 @@ export const ContainerPlanets = styled.div`
   div {
     display: flex;
     flex-direction: column;
-
-    input {
-      background: none;
-      border: none;
-      border-bottom: 1px solid snow;
-      padding: 0.3rem;
-      outline: none;
-    }
   }
 
   //SCROLLBAR

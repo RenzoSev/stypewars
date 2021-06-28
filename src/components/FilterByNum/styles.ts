@@ -1,15 +1,28 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 
-export const ContainerSelect = styled.div`
-  width: 8rem;
-  max-width: 200px;
-  overflow: hidden;
+export const StyledFormControl = styled(FormControl)`
+  width: 30%;
+`;
 
-  select {
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid snow;
-    padding: 0.3rem;
-    outline: none;
+export const StyledInputLabel = styled(InputLabel)`
+  color: snow;
+  padding: 0 0.3rem;
+
+  &.MuiFormLabel-root {
+    color: inherit;
   }
+`;
+
+export const StyledSelect = styled(Select)`
+  color: snow;
+  align-items: unset;
+  padding: 0.3rem;
+`;
+
+export const StyledMenuItem = styled(MenuItem)`
+  color: black;
 `;
