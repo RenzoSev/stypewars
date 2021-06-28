@@ -3,6 +3,7 @@ import useFilter from '../../hooks/useFilter';
 import useToFilter from '../../hooks/useToFilter';
 
 import {
+  StyledContainerInputs,
   StyledFormControl,
   StyledInputLabel,
   StyledSelect,
@@ -31,55 +32,59 @@ function FilterByNum() {
 
   return (
     <div>
-      <StyledFormControl>
-        <StyledInputLabel id="column-filter">Category</StyledInputLabel>
-        <StyledSelect
-          id="column-filter"
-          onChange={(e) => setCategory(e.target.value as string)}
-          value={category}
-          label="Category"
+      <StyledContainerInputs>
+        <StyledFormControl variant="filled">
+          <StyledInputLabel id="column-filter">Category</StyledInputLabel>
+          <StyledSelect
+            id="column-filter"
+            onChange={(e) => setCategory(e.target.value as string)}
+            value={category}
+            label="Category"
+          >
+            {categories.map((item) => (
+              <StyledMenuItem key={item} value={item}>
+                {item}
+              </StyledMenuItem>
+            ))}
+          </StyledSelect>
+        </StyledFormControl>
+
+        <StyledFormControl variant="filled">
+          <StyledInputLabel id="comparison-filter">Comparison</StyledInputLabel>
+          <StyledSelect
+            id="comparison-filter"
+            onChange={({ target }) => setComparison(target.value as string)}
+            value={comparison}
+            label="Comparison"
+          >
+            {dropdownComparasion.map((item) => (
+              <StyledMenuItem key={item} value={item}>
+                {item}
+              </StyledMenuItem>
+            ))}
+          </StyledSelect>
+        </StyledFormControl>
+
+        <StyledTextField
+          type="number"
+          id="standard-number"
+          label="Value"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          onChange={({ target }) => setValue(Number(target.value))}
+          placeholder="Value"
+          variant="filled"
+        />
+
+        <StyledButton
+          id="button-filter"
+          type="button"
+          onClick={() => addNewFilter()}
         >
-          {categories.map((item) => (
-            <StyledMenuItem key={item} value={item}>
-              {item}
-            </StyledMenuItem>
-          ))}
-        </StyledSelect>
-      </StyledFormControl>
-
-      <StyledFormControl>
-        <StyledInputLabel id="comparison-filter">Comparison</StyledInputLabel>
-        <StyledSelect
-          id="comparison-filter"
-          onChange={({ target }) => setComparison(target.value as string)}
-          value={comparison}
-          label="Comparison"
-        >
-          {dropdownComparasion.map((item) => (
-            <StyledMenuItem key={item} value={item}>
-              {item}
-            </StyledMenuItem>
-          ))}
-        </StyledSelect>
-      </StyledFormControl>
-
-      <StyledTextField
-        type="number"
-        id="standard-number"
-        label="Value"
-        InputLabelProps={{
-          shrink: true,
-        }}
-        onChange={({ target }) => setValue(Number(target.value))}
-      />
-
-      <StyledButton
-        id="button-filter"
-        type="button"
-        onClick={() => addNewFilter()}
-      >
-        Pesquisar
-      </StyledButton>
+          Pesquisar
+        </StyledButton>
+      </StyledContainerInputs>
     </div>
   );
 }

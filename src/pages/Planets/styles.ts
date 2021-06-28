@@ -20,9 +20,10 @@ export const ContainerPlanets = styled('div')`
   overflow-x: scroll;
   overflow-y: scroll;
 
-  div {
+  > div {
     display: flex;
     flex-direction: column;
+    gap: 1.5REM;
   }
 
   //SCROLLBAR
