@@ -15,6 +15,7 @@ export const StyledContainerInputs = styled.div`
 
 export const StyledFormControl = styled(FormControl)`
   background: #ffffff0a;
+  border: 1px solid #8080801f;
   border-radius: 8px;
   width: 25%;
 `;
@@ -34,13 +35,14 @@ export const StyledMenuItem = styled(MenuItem)`
 
 export const StyledButton = styled(Button)`
   background: #ffffff0a;
-  border: 1px solid white;
+  border: 1px solid #ffffff38;
   padding: 0 0.6rem;
 `;
 
 export const StyledTextField = styled(TextField)`
   background: #ffffff0a;
-  border-radius: 1px solid #ffffff24;
+  border: 1px solid #8080801f;
+  border-radius: 8px;
   width: 20%;
 
   label,

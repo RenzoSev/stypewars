@@ -31,61 +31,59 @@ function FilterByNum() {
   }, [] as string[]);
 
   return (
-    <div>
-      <StyledContainerInputs>
-        <StyledFormControl variant="filled">
-          <StyledInputLabel id="column-filter">Category</StyledInputLabel>
-          <StyledSelect
-            id="column-filter"
-            onChange={(e) => setCategory(e.target.value as string)}
-            value={category}
-            label="Category"
-          >
-            {categories.map((item) => (
-              <StyledMenuItem key={item} value={item}>
-                {item}
-              </StyledMenuItem>
-            ))}
-          </StyledSelect>
-        </StyledFormControl>
-
-        <StyledFormControl variant="filled">
-          <StyledInputLabel id="comparison-filter">Comparison</StyledInputLabel>
-          <StyledSelect
-            id="comparison-filter"
-            onChange={({ target }) => setComparison(target.value as string)}
-            value={comparison}
-            label="Comparison"
-          >
-            {dropdownComparasion.map((item) => (
-              <StyledMenuItem key={item} value={item}>
-                {item}
-              </StyledMenuItem>
-            ))}
-          </StyledSelect>
-        </StyledFormControl>
-
-        <StyledTextField
-          type="number"
-          id="standard-number"
-          label="Value"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          onChange={({ target }) => setValue(Number(target.value))}
-          placeholder="Value"
-          variant="filled"
-        />
-
-        <StyledButton
-          id="button-filter"
-          type="button"
-          onClick={() => addNewFilter()}
+    <StyledContainerInputs>
+      <StyledFormControl variant="filled">
+        <StyledInputLabel id="column-filter">Category</StyledInputLabel>
+        <StyledSelect
+          id="column-filter"
+          onChange={(e) => setCategory(e.target.value as string)}
+          value={category}
+          label="Category"
         >
-          Pesquisar
-        </StyledButton>
-      </StyledContainerInputs>
-    </div>
+          {categories.map((item) => (
+            <StyledMenuItem key={item} value={item}>
+              {item}
+            </StyledMenuItem>
+          ))}
+        </StyledSelect>
+      </StyledFormControl>
+
+      <StyledFormControl variant="filled">
+        <StyledInputLabel id="comparison-filter">Comparison</StyledInputLabel>
+        <StyledSelect
+          id="comparison-filter"
+          onChange={({ target }) => setComparison(target.value as string)}
+          value={comparison}
+          label="Comparison"
+        >
+          {dropdownComparasion.map((item) => (
+            <StyledMenuItem key={item} value={item}>
+              {item}
+            </StyledMenuItem>
+          ))}
+        </StyledSelect>
+      </StyledFormControl>
+
+      <StyledTextField
+        type="number"
+        id="standard-number"
+        label="Value"
+        InputLabelProps={{
+          shrink: true,
+        }}
+        onChange={({ target }) => setValue(Number(target.value))}
+        placeholder="Value"
+        variant="filled"
+      />
+
+      <StyledButton
+        id="button-filter"
+        type="button"
+        onClick={() => addNewFilter()}
+      >
+        Pesquisar
+      </StyledButton>
+    </StyledContainerInputs>
   );
 }
 

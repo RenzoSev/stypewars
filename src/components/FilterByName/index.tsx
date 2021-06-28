@@ -1,5 +1,6 @@
 import React from 'react';
 import useStarWars from '../../hooks/useStarWars';
+import { StyledTextField } from './styles';
 
 function FilterByName() {
   const { filter, setFilter } = useStarWars();
@@ -12,7 +13,14 @@ function FilterByName() {
     setFilter(newFilter);
   };
 
-  return <input data-testid="name-filter" placeholder="Search by name" onChange={ filterByName } />;
+  return (
+    <StyledTextField
+      onChange={filterByName}
+      variant="filled"
+      type="search"
+      label="Search by name"
+    />
+  );
 }
 
 export default FilterByName;
