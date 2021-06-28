@@ -81,7 +81,7 @@ function FilterByNum() {
         type="button"
         onClick={() => addNewFilter()}
       >
-        Pesquisar
+        search
       </StyledButton>
     </StyledContainerInputs>
   );
