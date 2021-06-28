@@ -4,16 +4,20 @@ import OrderPlanets from '../../components/OrderPlanets';
 import RemoveFilters from '../../components/RemoveFilters';
 import Table from '../../components/Table';
 
+import { ContainerPlanets, MainContainerPlanets } from './styles';
+
 function Planets() {
   return (
-    <>
-      <FilterByName />
-      <FilterByNum />
-      <RemoveFilters />
-      <OrderPlanets />
-      <Table />
-    </>
+    <MainContainerPlanets>
+      <ContainerPlanets>
+        <FilterByName />
+        <FilterByNum />
+        <RemoveFilters />
+        <OrderPlanets />
+        <Table />
+      </ContainerPlanets>
+    </MainContainerPlanets>
   );
-} 
+}
 
 export default Planets;

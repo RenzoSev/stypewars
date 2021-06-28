@@ -13,7 +13,9 @@ function App() {
   return (
     <StarWarsContextProvider>
       <GlobalStyle />
+      
       <Header />
+      
       <Switch>
         <Route path="/all-filters" component={Planets} />
         <Route path="/" component={Home} />
