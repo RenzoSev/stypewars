@@ -10,10 +10,13 @@ function Planets() {
   return (
     <MainContainerPlanets>
       <ContainerPlanets>
-        <FilterByName />
-        <FilterByNum />
-        <RemoveFilters />
-        <OrderPlanets />
+        <div>
+          <FilterByName />
+          <FilterByNum />
+          <RemoveFilters />
+          <OrderPlanets />
+        </div>
+
         <Table />
       </ContainerPlanets>
     </MainContainerPlanets>

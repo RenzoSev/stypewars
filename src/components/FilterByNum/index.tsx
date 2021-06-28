@@ -1,6 +1,7 @@
 import React from 'react';
 import useFilter from '../../hooks/useFilter';
 import useToFilter from '../../hooks/useToFilter';
+import { ContainerSelect } from './styles';
 
 function FilterByNum() {
   const {
@@ -20,34 +21,38 @@ function FilterByNum() {
 
   return (
     <div>
-      <select
-        data-testid="column-filter"
-        onChange={ ({ target }) => setCategory(target.value) }
-      >
-        {categories.map((item) => (
-          <option key={ item }>{item}</option>
-        ))}
-      </select>
+      <ContainerSelect>
+        <select
+          data-testid="column-filter"
+          onChange={({ target }) => setCategory(target.value)}
+        >
+          {categories.map((item) => (
+            <option key={item}>{item}</option>
+          ))}
+        </select>
+      </ContainerSelect>
 
-      <select
-        data-testid="comparison-filter"
-        onChange={ ({ target }) => setComparison(target.value) }
-      >
-        {dropdownComparasion.map((item) => (
-          <option key={ item }>{item}</option>
-        ))}
-      </select>
+      <ContainerSelect>
+        <select
+          data-testid="comparison-filter"
+          onChange={({ target }) => setComparison(target.value)}
+        >
+          {dropdownComparasion.map((item) => (
+            <option key={item}>{item}</option>
+          ))}
+        </select>
+      </ContainerSelect>
 
       <input
         type="number"
         data-testid="value-filter"
-        onChange={ ({ target }) => setValue(Number(target.value)) }
+        onChange={({ target }) => setValue(Number(target.value))}
       />
 
       <button
         data-testid="button-filter"
         type="button"
-        onClick={ () => addNewFilter() }
+        onClick={() => addNewFilter()}
       >
         Pesquisar
       </button>

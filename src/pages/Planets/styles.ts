@@ -21,6 +21,19 @@ export const ContainerPlanets = styled.div`
   overflow-x: scroll;
   overflow-y: scroll;
 
+  div {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      background: none;
+      border: none;
+      border-bottom: 1px solid snow;
+      padding: 0.3rem;
+      outline: none;
+    }
+  }
+
   //SCROLLBAR
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);

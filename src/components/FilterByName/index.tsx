@@ -12,7 +12,7 @@ function FilterByName() {
     setFilter(newFilter);
   };
 
-  return <input data-testid="name-filter" onChange={ filterByName } />;
+  return <input data-testid="name-filter" placeholder="Search by name" onChange={ filterByName } />;
 }
 
 export default FilterByName;
