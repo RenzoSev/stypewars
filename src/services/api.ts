@@ -1,5 +1,5 @@
 import getObjectWithoutTheKey from '../helper/objectsMethods';
-import { planetWithResidents } from '../types/types';
+import { planets, planetWithResidents } from '../types/types';
 
 const PLANETS_URL = 'https://swapi-trybe.herokuapp.com/api/planets/';
 
@@ -23,10 +23,18 @@ export const starwarsPlanetsAPI = async () => {
 
 export const fetchPlanets = async () => {
   const results = await starwarsPlanetsAPI();
+  const keysToRemove = ['residents', 'films', 'created', 'edited', 'url'];
   const filteredResults = results.map((planet) => {
-    const filteredPlanet = getObjectWithoutTheKey(planet, 'residents');
+    const filteredPlanet = keysToRemove.reduce((acc, cur, index) => {
+      if (!index) {
+        const planetObject = getObjectWithoutTheKey(planet, cur);
+        return planetObject;
+      }
+
+      const planetObject = getObjectWithoutTheKey(acc, cur);
+      return planetObject;
+    }, planet as planets);
     return filteredPlanet;
   });
-
   return filteredResults;
 };

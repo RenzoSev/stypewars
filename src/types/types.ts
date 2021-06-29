@@ -8,13 +8,13 @@ export interface planets {
   terrain: string;
   surface_water: string;
   population: string;
-  films: [string];
-  created: string;
-  edited: string;
-  url: string;
 }
 
 export interface planetWithResidents extends planets {
   residents: [string];
+  films: [string];
+  created: string;
+  edited: string;
+  url: string;
 };
 
