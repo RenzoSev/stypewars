@@ -15,30 +15,15 @@ export const MainContainerPlanets = styled('main')`
 `;
 
 export const ContainerPlanets = styled('div')`
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  
   height: 100%;
-
-  overflow-x: scroll;
-  overflow-y: scroll;
 
   > div {
     display: flex;
     flex-direction: column;
-    gap: 1.5REM;
-  }
-
-  //SCROLLBAR
-  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-
-  &::-webkit-scrollbar {
-    width: 8px;
-    background-color: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: snow;
+    gap: 1.5rem;
   }
 `;

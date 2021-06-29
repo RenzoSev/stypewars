@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   getFirstLetterUpperCase,
   removeUnderlineFromLetter,
@@ -6,6 +7,17 @@ import {
 import useFilter from '../../hooks/useFilter';
 import useStarWars from '../../hooks/useStarWars';
 import { planets } from '../../types/types';
+
+import TableContainer from '@material-ui/core/TableContainer';
+import {
+  StyledTable,
+  StyledTableContainer,
+  StyledTableHead,
+  StyledTableRow,
+  StyledTableBody,
+  StyledTableCell,
+  StyledPaper,
+} from './styles';
 
 function Table() {
   const { planets } = useStarWars();
@@ -20,37 +32,41 @@ function Table() {
     const planetInfos = Object.values(planet);
 
     return (
-      <tr key={planet.name}>
+      <StyledTableRow key={planet.name}>
         {planetInfos.map((info, index) => {
           if (!index) {
             return (
-              <td key={info} data-testid="planet-name">
+              <StyledTableCell key={info} align="center">
                 {info}
-              </td>
+              </StyledTableCell>
             );
           }
 
           return <td key={info}>{info}</td>;
         })}
-      </tr>
+      </StyledTableRow>
     );
   };
 
   if (!planets.length) return <p>Loading...</p>;
   return (
-    <table>
-      <thead>
-        <tr>
-          {planetKeysToTableHead.map((info) => (
-            <th key={info}>{info}</th>
-          ))}
-        </tr>
-      </thead>
+    <TableContainer component={StyledPaper}>
+      <StyledTable>
+        <StyledTableHead>
+          <StyledTableRow>
+            {planetKeysToTableHead.map((info) => (
+              <StyledTableCell key={info} align="center">
+                {info}
+              </StyledTableCell>
+            ))}
+          </StyledTableRow>
+        </StyledTableHead>
 
-      <tbody>
-        {filteredPlanets.map((planet) => renderPlanetInformation(planet))}
-      </tbody>
-    </table>
+        <StyledTableBody>
+          {filteredPlanets.map((planet) => renderPlanetInformation(planet))}
+        </StyledTableBody>
+      </StyledTable>
+    </TableContainer>
   );
 }
 
