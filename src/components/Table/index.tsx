@@ -1,4 +1,8 @@
 import React from 'react';
+import {
+  getFirstLetterUpperCase,
+  removeUnderlineFromLetter,
+} from '../../helper/fixStrings';
 import useFilter from '../../hooks/useFilter';
 import useStarWars from '../../hooks/useStarWars';
 import { planets } from '../../types/types';
@@ -7,21 +11,26 @@ function Table() {
   const { planets } = useStarWars();
   const { filteredPlanets } = useFilter();
 
+  const planetKeysToTableHead = Object.keys(planets[0] || {}).map((str) => {
+    const firstLetterUpperCase = getFirstLetterUpperCase(str);
+    return removeUnderlineFromLetter(firstLetterUpperCase);
+  });
+
   const renderPlanetInformation = (planet: planets) => {
     const planetInfos = Object.values(planet);
 
     return (
-      <tr key={ planet.name }>
+      <tr key={planet.name}>
         {planetInfos.map((info, index) => {
           if (!index) {
             return (
-              <td key={ info } data-testid="planet-name">
+              <td key={info} data-testid="planet-name">
                 {info}
               </td>
             );
           }
 
-          return <td key={ info }>{info}</td>;
+          return <td key={info}>{info}</td>;
         })}
       </tr>
     );
@@ -32,7 +41,9 @@ function Table() {
     <table>
       <thead>
         <tr>
-          {Object.keys(planets[0]).map((info) => <th key={ info }>{info}</th>)}
+          {planetKeysToTableHead.map((info) => (
+            <th key={info}>{info}</th>
+          ))}
         </tr>
       </thead>
 
