@@ -1,9 +1,10 @@
-# 💰 TrybeWallet 💰
+# 💰 Starwars - Planets Search 💰
 ## ℹ️ About the project
-This project is a JavaScript built-in currency conversion spend control portfolio
-which was a project proposed by Trybe.
+This project is a Typescript built-in planet search from Starwars.
+</br>
+It was a project proposed by Trybe.
 <br/>
-The main technologies are Redux, ReactJS and TailwindCSS.
+The main technologies are Typescript, Material UI and ReactJS.
 <br/>
 You can know more about Trybe [clicking here!](https://www.betrybe.com/)
 
@@ -37,5 +38,10 @@ npm start
 
 ## Presentation
 ### 🖼️ Images 🖼️
+![Captura de tela de 2021-06-29 11-28-48](https://user-images.githubusercontent.com/73757018/123826059-cf26eb00-d8d5-11eb-98e9-e36aa47b9b90.png)
 
 ### 🎥 Video 🎥
+
+
+https://user-images.githubusercontent.com/73757018/123826073-d2ba7200-d8d5-11eb-9d43-123429c76392.mp4
+
