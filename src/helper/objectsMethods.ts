@@ -1,10 +1,11 @@
 import { planetWithResidents, planets } from '../types/types';
-
-const getObjectWithoutTheKey = (
+type getObjectWithoutTheKeyTypes = (
   object: planetWithResidents,
   key: keyof planetWithResidents
-) => {
-  const spreadObject = {...object};
+) => planets;
+
+const getObjectWithoutTheKey: getObjectWithoutTheKeyTypes = (object, key) => {
+  const spreadObject = { ...object };
   delete spreadObject[key];
   return spreadObject;
 };
