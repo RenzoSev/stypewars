@@ -1,4 +1,9 @@
 import React from 'react';
+
+import {
+  getFirstLetterUpperCase,
+  removeUnderlineFromLetter,
+} from '../../helper/fixStrings';
 import useFilter from '../../hooks/useFilter';
 import useToFilter from '../../hooks/useToFilter';
 
@@ -27,7 +32,7 @@ function FilterByNum() {
 
   const categories = dropdownCategories.reduce((acc, cur) => {
     if (filteredCategories.includes(cur)) return acc;
-    return acc.concat(cur);
+    return acc.concat(removeUnderlineFromLetter(getFirstLetterUpperCase(cur)));
   }, [] as string[]);
 
   return (

@@ -10,8 +10,12 @@ import {
   StyledInputLabel,
   StyledSelect,
   StyledMenuItem,
-  StyledButton
+  StyledButton,
 } from '../OrderPlanets/styles';
+import {
+  getFirstLetterUpperCase,
+  removeUnderlineFromLetter,
+} from '../../helper/fixStrings';
 
 export default function OrderPlanets() {
   const { planets, filter, setFilter } = useStarWars();
@@ -47,7 +51,7 @@ export default function OrderPlanets() {
         >
           {columns.map((col) => (
             <StyledMenuItem key={col} value={col}>
-              {col}
+              {removeUnderlineFromLetter(getFirstLetterUpperCase(col))}
             </StyledMenuItem>
           ))}
         </StyledSelect>
