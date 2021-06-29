@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useStarWars from '../../hooks/useStarWars';
+import Radio from '@material-ui/core/Radio';
 import {
   StyledContainerOrder,
   StyledFormControl,
@@ -60,7 +61,10 @@ export default function OrderPlanets() {
         <StyledFormControlLabel
           value="ASC"
           control={
-            <StyledRadio onChange={({ target }) => setSort(target.value)} />
+            <Radio
+              color="primary"
+              onChange={({ target }) => setSort(target.value)}
+            />
           }
           label="ASC"
         />

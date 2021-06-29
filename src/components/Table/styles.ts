@@ -10,7 +10,9 @@ import Paper from '@material-ui/core/Paper';
 
 export const StyledTableContainer = styled(GlobalTableContainer)``;
 
-export const StyledTable = styled(GlobalTable)``;
+export const StyledTable = styled(GlobalTable)`
+  color: snow;
+`;
 
 export const StyledTableRow = styled(GlobalTableRow)`
   text-align: center;
@@ -32,7 +34,7 @@ export const StyledTableHead = styled(GlobalTableHead)`
 export const StyledTableBody = styled(GlobalTableBody)``;
 
 export const StyledTableCell = styled(GlobalTableCell)`
-  color: inherit;
+  color: snow;
 `;
 
 export const StyledPaper = styled(Paper)`

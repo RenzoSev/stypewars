@@ -10,7 +10,6 @@ const useStyles = makeStyles(() =>
         padding: '0',
         'box-sizing': 'border-box',
         'font-family': 'Montserrat, sans-serif',
-        color: 'snow',
         'h1, h2, h3, h4, h5, h6': {
           'font-family': 'Lato, sans-serif',
         },

@@ -15,6 +15,6 @@ export const StyledTextField = styled(TextField)`
   }
 
   label {
-    color: inherit;
+    color: snow;
   }
 `;

@@ -16,13 +16,21 @@ export const StyledContainerOrder = styled.div`
 
   margin: 0 auto;
   width: 94%;
+
+  color: snow;
 `;
 
 export const StyledFormControl = styled(GlobalFormControl)`
   width: 33%;
 `;
 
-export const StyledFormControlLabel = styled(GlobalFormControlLabel)``;
+export const StyledFormControlLabel = styled(GlobalFormControlLabel)`
+  span {
+    span {
+      color: #3f51b5;
+    }
+  }
+`;
 
 export const StyledRadioGroup = styled(GlobalRadioGroup)`
   flex-flow: row;
