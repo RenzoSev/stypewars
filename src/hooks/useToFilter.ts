@@ -8,6 +8,21 @@ export default function useToFilter() {
   const [comparison, setComparison] = useState('');
   const [value, setValue] = useState(0);
 
+  const resetAllFilters = () => {
+    const resetedFilters = {
+      filterByName: {
+        name: '',
+      },
+      filterByNumericValues: [],
+      order: {
+        column: 'Name',
+        sort: 'ASC',
+      },
+    };
+
+    setFilter(resetedFilters);
+  }
+
   const addNewFilter = () => {
     const newFilter = {
       ...filter,
@@ -36,6 +51,7 @@ export default function useToFilter() {
     setComparison,
     setValue,
     addNewFilter,
+    resetAllFilters,
     dropdownCategories,
     dropdownComparasion,
   };

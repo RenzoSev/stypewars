@@ -1,13 +1,14 @@
 import { filterByName, filterByNum } from '../helper/filters';
-import { planets } from '../types/types';
 import useStarWars from './useStarWars';
 
 export default function useFilter() {
   const { filter, planets } = useStarWars();
   const { filterByNumericValues } = filter;
+  
   const isThereAFilter = filter.filterByNumericValues.length;
-
+  
   const planetsByName = filterByName(planets, filter.filterByName.name);
+  
   const filteredCategories = isThereAFilter ? filterByNumericValues
     .map(({ category }) => category) : [];
 

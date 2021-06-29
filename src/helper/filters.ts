@@ -13,7 +13,9 @@ type filterFunctionsTypes = (
 ) => planets[];
 
 export const filterByName = (array: planets[], name: string) => {
-  const filteredArrayByName = array.filter((item) => item.name.includes(name));
+  const filteredArrayByName = array.filter((item) =>
+    item.name.toLowerCase().includes(name.toLowerCase())
+  );
   return filteredArrayByName;
 };
 
