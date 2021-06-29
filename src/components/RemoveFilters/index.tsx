@@ -1,25 +1,35 @@
 import React from 'react';
+
 import useFilter from '../../hooks/useFilter';
 import useStarWars from '../../hooks/useStarWars';
+import {
+  getFirstLetterUpperCase,
+  removeUnderlineFromLetter,
+} from '../../helper/fixStrings';
+
+import {
+  DivContainerButton,
+  DivContainerButtons,
+  StyledButton,
+} from './styles';
 
 export default function RemoveFilters() {
   const { removeFilter } = useStarWars();
   const { filteredCategories } = useFilter();
 
   return (
-    <div>
+    <DivContainerButtons>
       {filteredCategories.map((category) => (
-        <div data-testid="filter" key={ category }>
-          {category}
-          <button
+        <DivContainerButton key={category}>
+          <StyledButton
             type="button"
             onClick={(e) => removeFilter(e)}
-            name={ category }
+            id={category}
           >
-            X
-          </button>
-        </div>
+            {removeUnderlineFromLetter(getFirstLetterUpperCase(category))}
+          </StyledButton>
+        </DivContainerButton>
       ))}
-    </div>
+    </DivContainerButtons>
   );
 }

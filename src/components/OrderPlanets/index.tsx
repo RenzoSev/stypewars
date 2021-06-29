@@ -86,7 +86,7 @@ export default function OrderPlanets() {
         type="button"
         onClick={handleSetFilter}
       >
-        Definir ordenação
+        define ordering
       </StyledButton>
     </StyledContainerOrder>
   );

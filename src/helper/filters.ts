@@ -33,10 +33,10 @@ export const filterByNum = (
   { value, category, comparison }: filterTypes
 ) => {
   const filters: { [key: string]: planets[] } = {
-    'maior que': isGreatherThan(array, category, Number(value)),
-    'menor que': isLessThan(array, category, Number(value)),
-    'igual a': isEqualTo(array, category, Number(value)),
+    'greather than': isGreatherThan(array, category, Number(value)),
+    'less than': isLessThan(array, category, Number(value)),
+    'equal to': isEqualTo(array, category, Number(value)),
   };
 
-  return filters[comparison];
+  return filters[comparison.toLowerCase()];
 };

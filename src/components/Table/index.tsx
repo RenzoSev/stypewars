@@ -11,7 +11,6 @@ import { planets } from '../../types/types';
 import TableContainer from '@material-ui/core/TableContainer';
 import {
   StyledTable,
-  StyledTableContainer,
   StyledTableHead,
   StyledTableRow,
   StyledTableBody,

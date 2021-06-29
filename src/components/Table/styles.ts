@@ -1,14 +1,11 @@
 import styled from 'styled-components';
 
-import GlobalTableContainer from '../../styles/components/table/GlobalTableContainer';
 import GlobalTable from '../../styles/components/table/GlobalTable';
 import GlobalTableHead from '../../styles/components/table/GlobalTableHead';
 import GlobalTableBody from '../../styles/components/table/GlobalTableBody';
 import GlobalTableRow from '../../styles/components/table/GlobalTableRow';
 import GlobalTableCell from '../../styles/components/table/GlobalTableCell';
 import Paper from '@material-ui/core/Paper';
-
-export const StyledTableContainer = styled(GlobalTableContainer)``;
 
 export const StyledTable = styled(GlobalTable)`
   color: snow;

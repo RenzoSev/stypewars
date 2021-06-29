@@ -32,7 +32,7 @@ function FilterByNum() {
 
   const categories = dropdownCategories.reduce((acc, cur) => {
     if (filteredCategories.includes(cur)) return acc;
-    return acc.concat(removeUnderlineFromLetter(getFirstLetterUpperCase(cur)));
+    return acc.concat(cur);
   }, [] as string[]);
 
   return (
@@ -47,7 +47,7 @@ function FilterByNum() {
         >
           {categories.map((item) => (
             <StyledMenuItem key={item} value={item}>
-              {item}
+              {removeUnderlineFromLetter(getFirstLetterUpperCase(item))}
             </StyledMenuItem>
           ))}
         </StyledSelect>

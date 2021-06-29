@@ -42,7 +42,7 @@ export default function useToFilter() {
     'surface_water',
   ];
 
-  const dropdownComparasion = ['maior que', 'menor que', 'igual a'];
+  const dropdownComparasion = ['Greather than', 'Less than', 'Equal to'];
 
   return {
     category,

@@ -58,9 +58,9 @@ export function StarWarsContextProvider({ children }: StarWarsContextProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   const removeFilter = (filterCategory: MouseEvent) => {
-    const { name } = filterCategory.target as HTMLInputElement;
+    const { id } = filterCategory.target as HTMLInputElement;
     const newFilter = filter.filterByNumericValues.filter(
-      ({ category }) => category !== name
+      ({ category }) => category !== id
     );
     setFilter({ ...filter, filterByNumericValues: newFilter });
   };
