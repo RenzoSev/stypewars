@@ -1,4 +1,4 @@
-# 💰 Starwars - Planets Search 💰
+# 🪐 Starwars - Planets Search 🪐
 ## ℹ️ About the project
 This project is a Typescript built-in planet search from Starwars.
 </br>
