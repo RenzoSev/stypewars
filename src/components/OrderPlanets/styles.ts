@@ -38,4 +38,5 @@ export const StyledMenuItem = styled(GlobalMenuItem)``;
 
 export const StyledButton = styled(GlobalButton)`
   width: 35%;
+  padding: 1rem 0;
 `;

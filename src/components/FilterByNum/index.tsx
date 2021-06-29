@@ -72,7 +72,7 @@ function FilterByNum() {
           shrink: true,
         }}
         onChange={({ target }) => setValue(Number(target.value))}
-        placeholder="Value"
+        placeholder="0"
         variant="filled"
       />
 

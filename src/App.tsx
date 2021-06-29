@@ -1,7 +1,9 @@
 import { Route, Switch } from 'react-router-dom';
 
-import Planets from './pages/Planets';
 import Home from './pages/Home';
+import Planets from './pages/Planets';
+import PlanetsByComparison from './pages/PlanetsByComparison';
+import PlanetsByOrder from './pages/PlanetsByOrder';
 
 import Header from './components/Header';
 
@@ -13,14 +15,15 @@ function App() {
   return (
     <StarWarsContextProvider>
       <GlobalStyle />
-      
+
       <Header />
-      
+
       <Switch>
         <Route path="/all-filters" component={Planets} />
+        <Route path="/filter-by-comparison" component={PlanetsByComparison} />
+        <Route path="/filter-by-order" component={PlanetsByOrder} />
         <Route path="/" component={Home} />
       </Switch>
-
     </StarWarsContextProvider>
   );
 }

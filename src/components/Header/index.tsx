@@ -9,8 +9,8 @@ function Header() {
       <DivLinksContainer>
         <Link to="/">Home</Link>
         <Link to="/all-filters">All filters</Link>
-        <Link to="#">Filtro 2</Link>
-        <Link to="#">Filtro 3</Link>
+        <Link to="/filter-by-comparison">Filter by comparison</Link>
+        <Link to="/filter-by-order">Filtro by order</Link>
       </DivLinksContainer>
     </HeaderContainer>
   );
