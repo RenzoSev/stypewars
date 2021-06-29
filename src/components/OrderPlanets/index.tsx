@@ -1,5 +1,16 @@
 import React, { useState } from 'react';
 import useStarWars from '../../hooks/useStarWars';
+import {
+  StyledContainerOrder,
+  StyledFormControl,
+  StyledRadioGroup,
+  StyledFormControlLabel,
+  StyledRadio,
+  StyledInputLabel,
+  StyledSelect,
+  StyledMenuItem,
+  StyledButton
+} from '../OrderPlanets/styles';
 
 export default function OrderPlanets() {
   const { planets, filter, setFilter } = useStarWars();
@@ -23,49 +34,52 @@ export default function OrderPlanets() {
   };
 
   return (
-    <div>
-      <select
-        data-testid="column-sort"
-        onChange={ ({ target }) => setColumn(target.value) }
+    <StyledContainerOrder>
+      <StyledFormControl variant="filled">
+        <StyledInputLabel id="column-sort">Category</StyledInputLabel>
+
+        <StyledSelect
+          id="column-sort"
+          onChange={({ target }) => setColumn(target.value as string)}
+          value={column}
+          label="Category"
+        >
+          {columns.map((col) => (
+            <StyledMenuItem key={col} value={col}>
+              {col}
+            </StyledMenuItem>
+          ))}
+        </StyledSelect>
+      </StyledFormControl>
+
+      <StyledRadioGroup
+        aria-label="order"
+        defaultValue="ASC"
+        name="radio-buttons-order"
       >
-        {columns.map((col) => (
-          <option key={ col }>{col}</option>
-        ))}
-      </select>
+        <StyledFormControlLabel
+          value="ASC"
+          control={
+            <StyledRadio onChange={({ target }) => setSort(target.value)} />
+          }
+          label="ASC"
+        />
+        <StyledFormControlLabel
+          value="DSC"
+          control={
+            <StyledRadio onChange={({ target }) => setSort(target.value)} />
+          }
+          label="DSC"
+        />
+      </StyledRadioGroup>
 
-      <div>
-        <label htmlFor="ASC">
-          ASC
-          <input
-            data-testid="column-sort-input-asc"
-            type="radio"
-            id="ASC"
-            name="sort"
-            value="ASC"
-            onChange={ ({ target }) => setSort(target.value) }
-          />
-        </label>
-
-        <label htmlFor="DSC">
-          DSC
-          <input
-            data-testid="column-sort-input-desc"
-            type="radio"
-            id="DSC"
-            name="sort"
-            value="DSC"
-            onChange={ ({ target }) => setSort(target.value) }
-          />
-        </label>
-      </div>
-
-      <button
+      <StyledButton
         data-testid="column-sort-button"
         type="button"
-        onClick={ handleSetFilter }
+        onClick={handleSetFilter}
       >
         Definir ordenação
-      </button>
-    </div>
+      </StyledButton>
+    </StyledContainerOrder>
   );
 }
