@@ -10,7 +10,7 @@ function Header() {
         <Link to="/">Home</Link>
         <Link to="/all-filters">All filters</Link>
         <Link to="/filter-by-comparison">Filter by comparison</Link>
-        <Link to="/filter-by-order">Filtro by order</Link>
+        <Link to="/filter-by-order">Filter by order</Link>
       </DivLinksContainer>
     </HeaderContainer>
   );

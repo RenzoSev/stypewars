@@ -24,6 +24,7 @@ export const MainContainer = styled.main`
     svg {
       cursor: pointer;
       transition: all 0.3s;
+      color: snow;
 
       &:hover {
         opacity: 80%;
