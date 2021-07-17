@@ -1,8 +1,8 @@
 # 🪐 Starwars - Planets Search 🪐
 ## ℹ️ About the project
-This project is a Typescript built-in planet search from Starwars.
-</br>
 It was a project proposed by Trybe.
+</br>
+This project is a Typescript built-in planet search from Starwars.
 <br/>
 The main technologies are Typescript, Material UI and ReactJS.
 <br/>
